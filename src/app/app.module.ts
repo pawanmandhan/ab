@@ -6,10 +6,8 @@ import { StatusBar } from "@ionic-native/status-bar";
 
 import { MyApp } from "./app.component";
 import { HomePage } from "../pages/home/home";
-import { BackgroundMode } from "@ionic-native/background-mode/ngx";
 import { CouchbaseProvider } from "../provider/CouchbaseProvider";
 import { HttpModule } from "@angular/http";
-// import { NativeAudio } from "@ionic-native/native-audio/ngx";
 
 @NgModule({
   declarations: [MyApp, HomePage],
@@ -17,7 +15,6 @@ import { HttpModule } from "@angular/http";
   bootstrap: [IonicApp],
   entryComponents: [MyApp, HomePage],
   providers: [
-    BackgroundMode,
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
