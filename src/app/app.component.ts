@@ -19,6 +19,7 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
       couch.startReplication();
+      console.log("after repl" + couch.getUrl());
     });
   }
 }

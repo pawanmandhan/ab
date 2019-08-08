@@ -7,7 +7,7 @@ export class CouchbaseProvider {
     url: string;
 
     constructor() {
-        console.log('CouchbaseProvider')
+        console.log('CouchbaseProvider');
     }
 
     public startReplication() {
@@ -16,6 +16,8 @@ export class CouchbaseProvider {
         let couch = new Couchbase();
         couch.openDatabase(LOCAL_DB_NAME).then(database => {
             this.database = database;
+            console.log(database);
+            console.log('db created successfully');
             console.log({ msg: 'db created successfully', db: database });
         }, (error) => {
             console.error({ errorMsg: error });
@@ -27,7 +29,7 @@ export class CouchbaseProvider {
     }
 
     getUrl() {
-        return this.url;
+        return this.database.getUrl();
     }
 
 }
